@@ -27,7 +27,6 @@ Graph1.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
 
 x = np.linspace(0,max(Data_x),n)
 Graph1.plot(x,x,Data_x,Data_y)
-Graph1.scatter(Data_x,Data_y,alpha=0.5)
 
 
 q = 0.45
