@@ -1,0 +1,43 @@
+# Benzene-toluene column at 1 atm, Raoult's law VLE
+system:
+  components: [benzene, toluene]     # light component first
+  pressure_kPa: 101.325
+  vle: {model: raoult}
+
+feeds:
+  - {name: Feed, flow: 100.0, z: 0.60, T_C: 60}   # or give q directly instead of T_C
+
+specs:
+  x_D: 0.95
+  x_W: 0.05
+  reflux_factor: 1.3                 # R / R_min (or set reflux_ratio)
+
+column:
+  configuration: full                # full | stripping | rectifying
+  condenser: total                   # total | partial
+  reboiler: partial                  # partial | steam
+
+efficiency:
+  overall: oconnell                  # or a number, or use `murphree: 0.7`
+
+economics:
+  steam_cost_per_GJ: 12.0
+  cw_cost_per_GJ: 0.5
+  capital_charge: 0.333
+
+analysis:
+  reflux_sweep: true
+  feed_stage_sensitivity: true
+  economics: true
+  ponchon_savarit: true
+
+# Rate an existing column: what purities does it reach?
+rating:
+  n_stages: 16                       # equilibrium stages incl. reboiler
+  feed_stages: [8]
+  reflux_ratio: 1.5
+  distillate_flow: 61.1
+
+output:
+  directory: results/benzene_toluene
+  excel: true

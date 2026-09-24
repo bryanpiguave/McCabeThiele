@@ -1,0 +1,13 @@
+# Stripping column: feed on the top stage, no condenser or reflux
+system:
+  components: [methanol, water]
+  vle: {model: van_laar}
+
+feeds:
+  - {flow: 100.0, z: 0.15, q: 1.0}
+
+specs: {x_W: 0.002}
+
+column: {configuration: stripping, boilup_factor: 1.4}
+
+output: {directory: results/stripper}

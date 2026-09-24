@@ -1,0 +1,19 @@
+# Two feeds of different composition and a liquid side product
+system:
+  components: [benzene, toluene]
+  vle: {model: raoult}
+
+feeds:
+  - {name: Rich feed, flow: 60.0, z: 0.70, q: 1.0}
+  - {name: Lean feed, flow: 40.0, z: 0.35, q: 0.5}
+
+side_draws:
+  - {name: Side product, flow: 10.0, x: 0.50, phase: liquid}
+
+specs: {x_D: 0.97, x_W: 0.03, reflux_factor: 1.4}
+
+column: {condenser: partial}
+
+efficiency: {overall: 0.6}
+
+output: {directory: results/two_feeds}

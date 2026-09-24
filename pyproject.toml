@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mccabe-thiele"
+version = "1.0.0"
+description = "Binary distillation design: McCabe-Thiele, shortcut methods, rating, Ponchon-Savarit and cost optimization"
+authors = [{ name = "Bryan Piguave" }]
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "pandas", "matplotlib", "pyyaml", "openpyxl"]
+
+[project.optional-dependencies]
+app = ["streamlit"]
+test = ["pytest"]
+
+[project.scripts]
+mccabe-thiele = "mccabe_thiele.cli:main"
+
+[tool.setuptools]
+packages = ["mccabe_thiele"]

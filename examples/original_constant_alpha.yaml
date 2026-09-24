@@ -1,0 +1,13 @@
+# The original script's case: tabulated constant-alpha VLE (alpha = 2.45)
+system:
+  components: [benzene, toluene]
+  vle: {model: table, file: benzene_toluene_constant_alpha.csv}
+
+feeds:
+  - {flow: 100.0, z: 0.60, q: 0.45}
+
+specs: {x_D: 0.95, x_W: 0.10, reflux_factor: 1.6}
+
+analysis: {ponchon_savarit: false}
+
+output: {directory: results/original}

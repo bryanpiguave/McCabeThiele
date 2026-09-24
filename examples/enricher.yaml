@@ -1,0 +1,13 @@
+# Rectifying (enriching) column: saturated-vapor feed below the bottom stage
+system:
+  components: [n-hexane, n-heptane]
+  vle: {model: raoult}
+
+feeds:
+  - {flow: 100.0, z: 0.50, q: 0.0}
+
+specs: {x_D: 0.95, reflux_factor: 1.5}
+
+column: {configuration: rectifying}
+
+output: {directory: results/enricher}

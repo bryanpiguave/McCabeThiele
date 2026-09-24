@@ -1,0 +1,13 @@
+# Ethanol recovery with live steam injected at the bottom instead of a reboiler
+system:
+  components: [ethanol, water]
+  vle: {model: van_laar}
+
+feeds:
+  - {flow: 100.0, z: 0.10, q: 1.0}
+
+specs: {x_D: 0.75, x_W: 0.002, reflux_factor: 1.3}
+
+column: {reboiler: steam}
+
+output: {directory: results/ethanol_water_steam}

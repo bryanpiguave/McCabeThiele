@@ -1,0 +1,14 @@
+# Ethanol-water: non-ideal (Van Laar), tangent pinch near the azeotrope,
+# Murphree tray efficiency
+system:
+  components: [ethanol, water]
+  vle: {model: van_laar}             # built-in parameters; or give params: {A12: .., A21: ..}
+
+feeds:
+  - {flow: 100.0, z: 0.10, q: 1.0}
+
+specs: {x_D: 0.85, x_W: 0.005, reflux_factor: 1.3}
+
+efficiency: {murphree: 0.65}
+
+output: {directory: results/ethanol_water}
