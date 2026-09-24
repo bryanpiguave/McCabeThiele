@@ -12,7 +12,7 @@ def intersection(x1_array, y1_array, x2_array, y2_array):
     return x_inter, y_inter
 
 
-archivo = pd.read_excel("Destilacion.xlsx")
+archivo = pd.read_csv("Destilacion.csv")
 Data_x=archivo["X"].values
 Data_y=archivo["Y"].values
 n =len(Data_x)
@@ -23,7 +23,7 @@ Grid =Figure.add_gridspec(1,1)
 Graph1 = Figure.add_subplot(Grid[0,0])
 Graph1.grid(True)
 Graph1.minorticks_on()
-Graph1.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
+Graph1.grid(visible=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
 
 x = np.linspace(0,max(Data_x),n)
 Graph1.plot(x,x,Data_x,Data_y)
